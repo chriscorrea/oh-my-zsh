@@ -30,7 +30,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$terminfo[bold]$fg[black]%}]%}%{$terminfo[bold]$fg
 # Prompt Format: USER@MACHINE DIRECTORY [git:BRANCH] STATE(color) \n %# (# for priviledged) 
 
 PROMPT="
-%{$fg[cyan]%}%n\
+%{$fg_bold[blue]%}%n%{$reset_color%}\
 %{$fg[blue]%}@\
 %{$fg[blue]%}$(box_name) \
 %{$fg[yellow]%}${current_dir}%{$reset_color%}\
@@ -39,9 +39,9 @@ $(_prompt_char)%{$terminfo[bold]$fg[black]%} %# %{$reset_color%}"
 
 if [[ "$(whoami)" == "root" ]]; then
 PROMPT="
-%{$bg[yellow]%}%{$fg[cyan]%}%n%{$reset_color%}\
+%{$bg[yellow]%}%{$fg[blue]%}%n%{$reset_color%}\
 %{$fg[white]%}@\
-%{$fg[green]%}$(box_name) \
+%{$fg[blue]%}$(box_name) \
 %{$fg[yellow]%}${current_dir}%{$reset_color%}\
 ${git_info} 
 $(_prompt_char)%{$terminfo[bold]$fg[red]%} %# %{$reset_color%}"
